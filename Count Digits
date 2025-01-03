@@ -1,0 +1,19 @@
+GeeksforGeeks:
+
+class Solution {
+    static int evenlyDivides(int n) {
+        // code here
+        int cnt=0;
+        int orgnum=n;
+        if(n==0) return 0;
+        while(n>0){
+            int lastdigit=n%10;
+            if(lastdigit!=0 && orgnum%lastdigit==0){
+                cnt=cnt+1;
+             
+            }
+            n=n/10;
+        }
+        return cnt;
+    }
+}
