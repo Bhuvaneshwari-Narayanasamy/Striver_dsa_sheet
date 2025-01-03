@@ -1,0 +1,22 @@
+Leetcode sum:
+
+int reverse(int x){
+int lastdigit;
+int revnum=0;
+while(x!=0){
+    lastdigit=x%10;
+    x=x/10;
+    if (revnum > INT_MAX / 10 || (revnum == INT_MAX / 10 && lastdigit > 7)) {
+            return 0;  // Overflow case for positive numbers
+        }
+        if (revnum < INT_MIN / 10 || (revnum == INT_MIN / 10 && lastdigit < -8)) {
+            return 0;  // Overflow case for negative numbers
+        }
+    revnum=(revnum*10)+lastdigit;
+}
+if(x<0){
+    revnum=-revnum;
+}
+return revnum;
+}
+
