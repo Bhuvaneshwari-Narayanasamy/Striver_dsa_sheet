@@ -1,0 +1,28 @@
+Question:
+9. Palindrome Number
+Solved
+Easy
+Topics
+Companies
+Hint
+Given an integer x, return true if x is a 
+palindrome, and false otherwise.
+
+Solution:
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        int revnum=0;
+        int originalnum=x;
+        while(x>0){
+    int lastdigit=x%10;
+    x=x/10;
+    revnum=(revnum*10)+lastdigit;
+    }
+    if(revnum==originalnum){
+        return true;}
+    else{
+    return false;
+    }
+    }
+}
